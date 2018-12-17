@@ -9,3 +9,14 @@ class RestaurantListSerializer(serializers.ModelSerializer):
         	'opening_time',
         	'closing_time',
         	]
+
+class RestaurantDetailsSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Restaurant
+		fields = ['id','owner','name','description','opening_time','closing_time',]
+
+
+class RestaurantCreateUpdateSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Restaurant
+		fields = ['name','description','opening_time','closing_time',]
